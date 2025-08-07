@@ -1,1 +1,35 @@
-<button (click)="toggleDarkMode()">Toggle Theme</button>
+<nav class="navbar">
+  <!-- Hamburger / flyout trigger (left of logo) -->
+  <button class="menu-button" (click)="toggleMenu()" aria-label="Open menu">☰</button>
+
+  <!-- Logo -->
+  <img src="assets/comicview.png" alt="ComicView Logo" class="logo" routerLink="/" />
+</nav>
+
+<!-- Floating Dark Mode Toggle (bottom-left) -->
+<button class="floating-theme-toggle" (click)="toggleTheme()" aria-label="Toggle dark mode">
+  <span *ngIf="!isDarkMode" class="moon">☾</span>
+  <span *ngIf="isDarkMode" class="sun">☀</span>
+</button>
+
+<!-- Backdrop behind the side menu -->
+<div class="menu-backdrop" *ngIf="menuOpen" (click)="closeMenu()"></div>
+
+<!-- Slide-out side menu -->
+<aside
+  class="side-menu"
+  [class.open]="menuOpen"
+  tabindex="0"
+  (keydown.escape)="closeMenu()"
+>
+  <div class="side-menu-header">
+    <span class="side-title">Menu</span>
+    <button class="close-button" (click)="closeMenu()" aria-label="Close menu">×</button>
+  </div>
+
+  <ul class="side-links">
+    <li><a routerLink="/" (click)="closeMenu()">Home</a></li>
+    <li><a routerLink="/collection" (click)="closeMenu()">Collection</a></li>
+    <li><a routerLink="/add-comic" (click)="closeMenu()">Add Comic</a></li>
+  </ul>
+</aside>

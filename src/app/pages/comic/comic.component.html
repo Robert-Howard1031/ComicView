@@ -1,1 +1,17 @@
-<p>comic works!</p>
+<button routerLink="/" style="margin-bottom: 16px;">← Back to Collection</button>
+
+<h2>{{ comic.title }}</h2>
+
+<p><strong>Purchase Price:</strong> ${{ comic.purchasePrice }}</p>
+<p><strong>Current Value:</strong> ${{ comic.currentValue }}</p>
+
+<p style="font-size: 18px; font-weight: bold;" [style.color]="isUp ? 'green' : 'red'">
+  {{ isUp ? '+' : '' }}{{ percentChange }}%
+</p>
+
+<canvas baseChart
+        [datasets]="chartData"
+        [labels]="chartLabels"
+        [options]="chartOptions"
+        [type]="'line'">
+</canvas>

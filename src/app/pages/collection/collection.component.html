@@ -1,22 +1,22 @@
 <h2>Your Comic Collection</h2>
 
-<button (click)="goToAddComic()">➕ Add Comic</button>
-
-<ul>
-  <li *ngFor="let comic of comics">
-    <strong>{{ comic.title }} {{ comic.issue }}</strong><br>
-    Bought at: ${{ comic.purchasePrice }}<br>
-    Current: ${{ comic.currentValue }}<br>
-    <button (click)="viewComic(comic.id)">View Details</button>
-  </li>
-</ul>
-
-<!-- Chart Placeholder -->
-<div style="margin-top: 40px;">
-  <h3>Total Value Over Time</h3>
-  <canvas baseChart
-          [datasets]="[]"
-          [labels]="[]"
-          chartType="line">
-  </canvas>
+<div *ngFor="let comic of comics" style="margin-bottom: 16px; border-bottom: 1px solid #ccc; padding-bottom: 10px;">
+  <p>
+    <strong>{{ comic.title }}</strong><br>
+    Purchased at ${{ comic.purchasePrice }}, now worth ${{ comic.currentValue }}
+  </p>
+  <button [routerLink]="['/comic', comic.id]">View Details</button>
 </div>
+
+<h3>Collection Trend</h3>
+<p style="font-size: 18px; font-weight: bold;" [style.color]="isUp ? 'green' : 'red'">
+  {{ isUp ? '+' : '' }}{{ averagePercentChange }}%
+</p>
+
+<canvas baseChart
+        [datasets]="chartData"
+        [labels]="chartLabels"
+        [options]="chartOptions"
+        [legend]="false"
+        [type]="'line'">
+</canvas>

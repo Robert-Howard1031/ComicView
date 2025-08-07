@@ -1,17 +1,10 @@
-<h2>Add a New Comic</h2>
+<div class="add-comic-container">
+  <button class="back-button" (click)="goBack()">
+    ← Back
+  </button>
 
-<form (ngSubmit)="saveComic()" #comicForm="ngForm">
-  <label>Title:</label><br>
-  <input type="text" [(ngModel)]="comic.title" name="title" required /><br><br>
+  <h2>Add Comic</h2>
 
-  <label>Issue #:</label><br>
-  <input type="text" [(ngModel)]="comic.issue" name="issue" required /><br><br>
-
-  <label>Purchase Price:</label><br>
-  <input type="number" [(ngModel)]="comic.purchasePrice" name="purchasePrice" required /><br><br>
-
-  <label>Purchase Date:</label><br>
-  <input type="date" [(ngModel)]="comic.purchaseDate" name="purchaseDate" required /><br><br>
-
-  <button type="submit">💾 Save Comic</button>
-</form>
+  <!-- Form will go here later -->
+  <p>[Form UI coming soon...]</p>
+</div>

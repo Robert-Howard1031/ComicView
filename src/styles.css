@@ -1,9 +1,75 @@
-/* You can add global styles to this file, and also import other style files */
-
+/* Angular Material prebuilt themes */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css"; /* Light theme */
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css"; /* Dark theme */
 
-body.dark-theme {
+/* Light mode (default) */
+body {
+  background-color: #ffffff;
+  color: #000000;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark mode class */
+body.dark-mode {
   background-color: #121212;
-  color: white;
+  color: #ffffff;
+}
+
+/* Keep navbar blue in both themes */
+.navbar {
+  background-color: #1976d2 !important;
+}
+
+/* Keep all buttons blue */
+button,
+.back-button,
+.floating-add-comic {
+  background-color: #1976d2 !important;
+  color: white !important;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover,
+.back-button:hover,
+.floating-add-comic:hover {
+  background-color: #1565c0 !important;
+}
+
+/* Floating Add Comic button */
+.floating-add-comic {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Floating Theme Toggle (bottom left) */
+.floating-theme-toggle {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Chart canvas */
+canvas {
+  max-width: 100%;
 }

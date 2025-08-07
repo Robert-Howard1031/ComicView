@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-add-comic',
@@ -7,21 +7,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./add-comic.component.css']
 })
 export class AddComicComponent {
+  constructor(private location: Location) {}
 
-  constructor(private router: Router) {}
-
-  comic = {
-    title: '',
-    issue: '',
-    purchasePrice: 0,
-    purchaseDate: ''
-  };
-
-  saveComic() {
-    // This is where we'll POST to the backend later
-    console.log('Comic to save:', this.comic);
-
-    // For now, just go back to collection view
-    this.router.navigate(['/collection']);
+  goBack(): void {
+    this.location.back(); // Go to previous page
   }
 }
