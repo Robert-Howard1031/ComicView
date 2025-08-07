@@ -1,0 +1,17 @@
+<h2>Add a New Comic</h2>
+
+<form (ngSubmit)="saveComic()" #comicForm="ngForm">
+  <label>Title:</label><br>
+  <input type="text" [(ngModel)]="comic.title" name="title" required /><br><br>
+
+  <label>Issue #:</label><br>
+  <input type="text" [(ngModel)]="comic.issue" name="issue" required /><br><br>
+
+  <label>Purchase Price:</label><br>
+  <input type="number" [(ngModel)]="comic.purchasePrice" name="purchasePrice" required /><br><br>
+
+  <label>Purchase Date:</label><br>
+  <input type="date" [(ngModel)]="comic.purchaseDate" name="purchaseDate" required /><br><br>
+
+  <button type="submit">💾 Save Comic</button>
+</form>

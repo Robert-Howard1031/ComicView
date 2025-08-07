@@ -1,0 +1,22 @@
+<h2>Your Comic Collection</h2>
+
+<button (click)="goToAddComic()">➕ Add Comic</button>
+
+<ul>
+  <li *ngFor="let comic of comics">
+    <strong>{{ comic.title }} {{ comic.issue }}</strong><br>
+    Bought at: ${{ comic.purchasePrice }}<br>
+    Current: ${{ comic.currentValue }}<br>
+    <button (click)="viewComic(comic.id)">View Details</button>
+  </li>
+</ul>
+
+<!-- Chart Placeholder -->
+<div style="margin-top: 40px;">
+  <h3>Total Value Over Time</h3>
+  <canvas baseChart
+          [datasets]="[]"
+          [labels]="[]"
+          chartType="line">
+  </canvas>
+</div>

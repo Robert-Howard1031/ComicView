@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css"; /* Light theme */
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css"; /* Dark theme */
+
+body.dark-theme {
+  background-color: #121212;
+  color: white;
+}
