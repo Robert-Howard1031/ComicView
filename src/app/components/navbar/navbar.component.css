@@ -142,3 +142,33 @@ body.dark-mode .close-button:hover { background-color: rgba(255,255,255,0.12); }
 body.dark-mode .side-links a:hover {
   background-color: rgba(255,255,255,0.12);
 }
+
+/* ===== Right-aligned Auth Buttons ===== */
+.nav-spacer {
+  flex: 1;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.nav-button {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  font-weight: bold;
+  padding: 5px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.nav-button.signup {
+  background: white;
+  color: #1976d2;
+}
+
+.nav-button:hover {
+  opacity: 0.85;
+}
