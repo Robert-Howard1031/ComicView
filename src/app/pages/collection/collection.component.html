@@ -7,16 +7,3 @@
   </p>
   <button [routerLink]="['/comic', comic.id]">View Details</button>
 </div>
-
-<h3>Collection Trend</h3>
-<p style="font-size: 18px; font-weight: bold;" [style.color]="isUp ? 'green' : 'red'">
-  {{ isUp ? '+' : '' }}{{ averagePercentChange }}%
-</p>
-
-<canvas baseChart
-        [datasets]="chartData"
-        [labels]="chartLabels"
-        [options]="chartOptions"
-        [legend]="false"
-        [type]="'line'">
-</canvas>
